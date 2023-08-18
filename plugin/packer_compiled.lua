@@ -119,6 +119,11 @@ _G.packer_plugins = {
     path = "/home/bartek/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ouroboros = {
+    loaded = true,
+    path = "/home/bartek/.local/share/nvim/site/pack/packer/start/ouroboros",
+    url = "https://github.com/jakemason/ouroboros"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/bartek/.local/share/nvim/site/pack/packer/start/packer.nvim",

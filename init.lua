@@ -1,1 +1,1 @@
-require("stec")
+require("personal")
