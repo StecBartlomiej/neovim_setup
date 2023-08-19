@@ -1,2 +1,2 @@
 
-vim.keymap.set("n", "<leader>h", ":Ouroboros<CR>")
+vim.keymap.set("n", "<leader>k", ":Ouroboros<CR>")
