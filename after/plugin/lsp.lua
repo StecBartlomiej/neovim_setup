@@ -4,7 +4,6 @@ lsp.ensure_installed({
 	'lua_ls',
 	'rust_analyzer',
 	'clangd',
-    'marksman',
 	'pyright',
 	'cmake'
 })
@@ -57,6 +56,17 @@ require('lspconfig').clangd.setup({
         "--clang-tidy-checks=-*,cppcoreguidelines-*,google-*,performance-*,clang-analyzer-*,portability-*,readability-*,modernize-*",
         "--header-insertion=iwyu",
     }
+})
+
+require('lspconfig').lua_ls.setup({
+    settings = {
+        Lua = {
+          diagnostics = {
+            -- Get the language server to recognize the `vim` global
+            globals = {'vim'},
+          },
+        },
+    },
 })
 
 lsp.setup()
