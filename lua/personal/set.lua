@@ -27,3 +27,11 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
 
 vim.g.mapleader = " "
+
+-- For markdown function, chrome is a link to windows chrome app
+function Chrome()
+    local file_name = 'file://wsl.localhost/Ubuntu' .. vim.fn.expand("%:p")
+    vim.fn.system({'chrome', file_name})
+end
+
+vim.api.nvim_create_user_command("Chrome", "lua Chrome()", {})
