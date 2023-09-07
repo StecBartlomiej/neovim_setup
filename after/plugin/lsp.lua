@@ -29,21 +29,6 @@ lsp.on_attach(function(client, bufnr)
     lsp.default_keymaps({buffer = bufnr})
 end)
 
-lsp.setup_nvim_cmp({
-      snippet = {
-            expand = function(args)
-              require('luasnip').lsp_expand(args.body)
-            end,
-          },
-    source = {
-        {name = 'nvim_lsp'},
-        {name = 'buffer'},
-        {name = 'luasnip'},
-    },
-    mapping = cmp_mappings,
-})
-
-
 
 require('lspconfig').clangd.setup({
     cmd = {
@@ -70,4 +55,19 @@ require('lspconfig').lua_ls.setup({
 })
 
 lsp.setup()
+
+cmp.setup({
+      snippet = {
+            expand = function(args)
+              require('luasnip').lsp_expand(args.body)
+            end,
+          },
+    source = {
+        {name = 'nvim_lsp'},
+        {name = 'luasnip', option = {use_show_condition = false}},
+        {{name = 'buffer'}},
+    },
+    mapping = cmp_mappings,
+})
+
 
