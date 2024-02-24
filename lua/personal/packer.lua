@@ -9,7 +9,10 @@ return require('packer').startup(function(use)
 
     use {
       'nvim-telescope/telescope.nvim', tag = '0.1.2',
-      requires = { {'nvim-lua/plenary.nvim'} }
+      requires = {
+          {'nvim-lua/plenary.nvim'},
+          {'nvim-telescope/telescope-ui-select.nvim'},
+      }
     }
 
     use({ 'rose-pine/neovim', as = 'rose-pine' })
@@ -20,6 +23,14 @@ return require('packer').startup(function(use)
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
     use('m4xshen/autoclose.nvim')
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
+
+    -- TODO - delete
     use {
         'jakemason/ouroboros',
         requires = { {'nvim-lua/plenary.nvim'} }

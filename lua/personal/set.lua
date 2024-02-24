@@ -17,7 +17,9 @@ vim.opt.cursorline = true
 
 
 vim.opt.incsearch = true
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
 
 vim.opt.termguicolors = true
 
@@ -25,7 +27,7 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
-vim.opt.updatetime = 50
+vim.opt.updatetime = 80
 
 vim.opt.colorcolumn = "80"
 
