@@ -15,9 +15,15 @@ return require('packer').startup(function(use)
       }
     }
 
-    use({ 'rose-pine/neovim', as = 'rose-pine' })
+    -- use({ 'rose-pine/neovim', as = 'rose-pine' })
+    -- vim.cmd('colorscheme rose-pine')
 
-    vim.cmd('colorscheme rose-pine')
+    use({ 'sainnhe/everforest', as = 'everforest' })
+    vim.cmd.set('background=dark')
+    vim.cmd('let g:everforest_background = "medium"')
+    vim.cmd('let g:everforest_better_performance = 1')
+    vim.cmd.colorscheme('everforest')
+
 
     use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use('mbbill/undotree')
